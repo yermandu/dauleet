@@ -2,4 +2,12 @@
 # There is no guarantee it will work. You have been warned. #
 #############################################################
 
+This is more one overlay from portage, what are new? Nothing. 
+This is only a set, and severals packages that im working in my repositorie.
+Probably they are never will go to portage tree because are very experimental.
+Various ebuilds here are 9999, this means that are under development stage.
+So please if are a ebuild here that not work, and is not in layman or 
+portage tree, please file a bug for official project of the software.
+And I don't guarantee that my ebuilds will work. 
+
 
