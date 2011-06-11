@@ -12,6 +12,7 @@ DESCRIPTION="WYSIWYG Music Score Typesetter"
 HOMEPAGE="http://mscore.sourceforge.net"
 #SRC_URI="mirror://sourceforge/project/mscore/mscore/MuseScore-${PV}/MuseScore-${PV}.tar.bz2"
 ESVN_REPO_URI="https://mscore.svn.sourceforge.net/svnroot/mscore/trunk/mscore/"
+#ESVN_PROJECT="mscore"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -41,6 +42,11 @@ FONT_SUFFIX=ttf
 FONT_S=${S}/mscore/fonts
 #MAKEOPTS="${MAKEOPTS} -j1"
 
+
+#src_prepare() {
+#	epatch "${FILESDIR}"/qtscriptgen-disable-2.0.patch
+#}
+
 src_compile() {
 	cmake-utils_src_make lupdate
 	cmake-utils_src_make lrelease
@@ -57,5 +63,6 @@ src_install() {
 src_unpack() {
 	subversion_src_unpack
 	cd "${S}"
+#	epatch "${FILESDIR}"/musescore-1.0-no-scriptgen.patch
 }
 
