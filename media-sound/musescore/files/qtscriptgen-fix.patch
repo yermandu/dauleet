@@ -1,0 +1,11 @@
+--- CMakeLists.txt.old	2010-07-12 22:59:57.000000000 +0300
++++ CMakeLists.txt	2010-08-09 11:57:12.350428237 +0300
+@@ -234,7 +234,7 @@
+ endif (NOT MINGW AND NOT APPLE)
+ 
+ set (subdirs al awl osdabzip rtf2html mscore share manual demos
+-     scriptgen singleapp fluid)
++     singleapp fluid)
+ 
+ if (MINGW OR APPLE)
+       set (subdirs ${subdirs} portmidi)
