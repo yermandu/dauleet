@@ -42,6 +42,8 @@ done
 
 RESTRICT="test"
 
+MAKEOPTS="-j1"
+
 RDEPEND="
 	!app-emulation/qemu-kvm
 	!app-emulation/qemu-softmmu

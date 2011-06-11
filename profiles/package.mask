@@ -1,3 +1,4 @@
 # These packages are masked for your security 
 
 =app-emulation/qemu-9999
+=media-sound/musescore-9999
