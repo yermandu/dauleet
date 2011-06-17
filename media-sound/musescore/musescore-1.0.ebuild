@@ -21,7 +21,7 @@ SRC_URI="mirror://sourceforge/project/mscore/mscore/MuseScore-${PV}/MuseScore-${
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
-IUSE=""
+IUSE="jack"
 
 RDEPEND="sys-libs/zlib
 	media-libs/alsa-lib
@@ -46,7 +46,8 @@ S=${WORKDIR}/mscore-${PV}/mscore
 VARTEXFONTS=${T}/fonts
 FONT_SUFFIX=ttf
 FONT_S=${S}/mscore/fonts
-MAKEOPTS="${MAKEOPTS} -j1"
+# When compile fails i try this:
+#MAKEOPTS="${MAKEOPTS} -j1"
 
 
 #src_prepare() {
