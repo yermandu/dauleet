@@ -2,38 +2,40 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-# Information http://bugs.gentoo.org/show_bug.cgi?id=358125
+EAPI=3
+PYTHON_DEPEND="2:2.5"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
-EAPI="2"
+inherit eutils distutils
 
-inherit python
+MY_PN="${PN/songwrite/Songwrite}"
 
-DESCRIPTION="A music score and songbook editor"
-HOMEPAGE="http://home.gna.org/oomadness/en/songwrite"
-SRC_URI="http://download.gna.org/songwrite/Songwrite2-${PV}.tar.gz"
+DESCRIPTION="A music score and songbook editor written in python"
+HOMEPAGE="http://home.gna.org/oomadness/en/songwrite/index.html"
+SRC_URI="http://download.gna.org/songwrite/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~sparc ~x86"
-IUSE="timidity"
+KEYWORDS="~amd64 ~x86"
+IUSE="midi print"
 
-RDEPEND="media-libs/alsa-lib
+DEPEND="media-libs/alsa-lib
 	x11-libs/gtk+
 	x11-libs/cairo
-	dev-python/pygtk
-	dev-python/pycairo
-	media-sound/timidity++
-	media-sound/editobj2"
+	midi? ( || ( media-sound/timidity++ media-sound/playmidi ) )
+	print? ( media-sound/lilypond )
+	dev-python/editobj2"
 
-DEPEND="${RDEPEND}
+RDEPEND="${DEPEND}
 	dev-util/pkgconfig
 	app-text/ghostscript-gpl"
-#    app-doc/doxygen
 
-
+S="${WORKDIR}/${MY_PN}-${PV}"
 
 src_install() {
-	python setup.py install  || die "Install failed see bug 358125"
+	distutils_src_install
+
+	newicon data/songwrite_about.png ${PN}.png || die
+	make_desktop_entry ${PN} ${MY_PN} ${PN} 'GTK;AudioVideo;Audio;Education;Music' || die
 }
-
-
