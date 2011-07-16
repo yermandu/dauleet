@@ -47,7 +47,8 @@ RDEPEND="dev-libs/libpcre[cxx]
         x11-libs/libX11"
 DEPEND="${RDEPEND}
         dev-lang/nasm
-        dev-util/pkgconfig"
+        dev-util/pkgconfig
+		dev-cpp/libxmlpp"
 
 src_configure() {
         local mycmakeargs="$(cmake-utils_use nsplugin COMPILE_PLUGIN)
