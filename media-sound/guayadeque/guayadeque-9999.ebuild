@@ -35,8 +35,8 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	dev-util/pkgconfig
 	dev-util/cmake"
-
-echo $(cat po/CMakeLists.txt | grep ADD_SUBDIRECTORY | sed 's#ADD_SUBDIRECTORY( \(\w\+\) )#\1#')
+# Need Fix
+# echo $(cat po/CMakeLists.txt | grep ADD_SUBDIRECTORY | sed 's#ADD_SUBDIRECTORY( \(\w\+\) )#\1#')
 LANGS="es uk it de fr is nb th cs ru hu sv nl"
 for l in ${LANGS}; do
 	IUSE="$IUSE linguas_${l}"
