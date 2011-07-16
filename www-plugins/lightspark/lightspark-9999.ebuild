@@ -48,7 +48,8 @@ RDEPEND="dev-libs/libpcre[cxx]
 DEPEND="${RDEPEND}
         dev-lang/nasm
         dev-util/pkgconfig
-		dev-cpp/libxmlpp"
+		dev-cpp/libxmlpp
+		dev-libs/libdbusmenu"
 
 src_configure() {
         local mycmakeargs="$(cmake-utils_use nsplugin COMPILE_PLUGIN)
