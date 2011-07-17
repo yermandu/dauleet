@@ -69,5 +69,9 @@ src_configure() {
 	if use debug; then
 		CMAKE_BUILD_TYPE=Debug
 	fi
-cmake-utils_src_configure
+	cmake-utils_src_configure
+}
+
+src_install() {
+	cmake-utils_src_install
 }
