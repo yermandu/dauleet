@@ -73,6 +73,9 @@ src_configure() {
                 local mycmakeargs="${mycmakeargs}
                         -DAUDIO_BACKEND=none"
         fi
+		if use debug; then
+			CMAKE_BUILD_TYPE=Debug
+		fi
         cmake-utils_src_configure
 }
 
@@ -87,6 +90,7 @@ pkg_postinst() {
                 elog "USE flag for either gnash or lightspark. For details, see"
                 elog "https://bugzilla.mozilla.org/show_bug.cgi?id=581848"
         fi
+		elog    ""
 		elog	"Please edit set your backend audio in file:"
 		elog	"/etc/xdg/lightspark.conf"
 }
