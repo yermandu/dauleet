@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://github.com/lightspark/lightspark.git"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="alsa openal nsplugin pulseaudio sdl"
+IUSE="nsplugin alsa openal pulseaudio sdl debug"
 
 RDEPEND="dev-libs/libpcre[cxx]
         media-fonts/liberation-fonts
