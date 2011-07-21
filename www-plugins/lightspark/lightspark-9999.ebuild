@@ -91,6 +91,6 @@ pkg_postinst() {
                 elog "https://bugzilla.mozilla.org/show_bug.cgi?id=581848"
         fi
 		elog    ""
-		elog	"Please edit set your backend audio in file:"
+		elog	"Please edit and set your backend audio in file:"
 		elog	"/etc/xdg/lightspark.conf"
 }
