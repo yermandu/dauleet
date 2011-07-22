@@ -17,7 +17,7 @@ IUSE="nsplugin alsa openal pulseaudio sdl debug"
 
 RDEPEND="dev-libs/libpcre[cxx]
         media-fonts/liberation-fonts
-        media-video/ffmpeg
+        >=media-video/ffmpeg-9999
         media-libs/fontconfig
         media-libs/ftgl
         >=media-libs/glew-1.5.3
