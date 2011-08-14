@@ -27,8 +27,11 @@ RDEPEND="sys-libs/zlib
 	>=x11-libs/qt-qt3support-4.6.3
 	>=x11-libs/qt-gui-4.6.3-r2
 	>=x11-libs/qt-svg-4.6.3
- 	>=x11-libs/qtscriptgenerator-0.1.0
-	dev-texlive/texlive-context"
+ 	>=x11-libs/qtscriptgenerator-0.1.0"
+	
+# This probably do the build documentation in pdf 
+# Anyway user manual pdf are in /usr/share/mscore-1.1/man/
+#dev-texlive/texlive-context
 
 DEPEND="${RDEPEND}
 	app-doc/doxygen
