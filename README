@@ -1,15 +1,67 @@
-#############################################################
-# There is no guarantee it will work. You have been warned. #
-#############################################################
+README
 
-/* Use by your own risk! */
+You can do anything since:
 
-This is more one overlay from portage, what are new? Nothing. 
-This is only a set, and severals packages that im working in my repositorie.
-Probably they are never will go to portage tree because are very experimental.
-Various ebuilds here are 9999, this means that are under development stage.
-So please if are a ebuild here that not work, and is not in layman or 
-portage tree, please file a bug for official project of the software.
-And I don't guarantee that my ebuilds will work. 
+1 - Free Redistribution.
+	You can redistribute this software to anyone, be a person or company.
+2 - Source Code Available.
+    Any program could be manteined through code.
+3 - Derived Works Permitted.
+	If someone want improve this program and redistribute.
+4 - Integrety of the Author's Source Code.
+	The authors of these softwares have the honor of your creation, if you
+	change something so you have to mark clearly to your change dont reflect
+	the author.
+5 - No discrimination Against Person or Groups.
+    It's free of origins, race, sex, color, age or anything.
+6 - No discrimination Against Fields of Endeavor.
+	It can be used to any propose. 
+7 - Distribution of license.
+	The license must work if you give the license to other.
+8 - License must not be Specific to a Product.
+	This mean that if you distribute the software to a distribution, can be
+	distribute to another distubution.
+9 - License must not contaminate other Software.
+	The license must not place restrictions on other software that is 
+	distributed along with the licensed software.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+You can see more about this restrictions at:
+http://www.gnu.org/copyleft/gpl.html
+
+########################################################################
+#                                                                      #
+#    ####              ##           ##        ##                       #
+#     ##  # ##   #### #####  ###    ##  ###  ##### ####  ###  # ##     #
+#     ##  ## ## ##     ##      ##   ##    ##  ##     ## ## ## ## ##    #
+#     ##  ## ## ####   ##    ####   ##  ####  ##     ## ## ## ## ##    #
+#     ##  ## ##  ####  ##   ## ##   ## ## ##  ##     ## ## ## ## ##    #
+#     ##  ## ##    ##  ##   ## ##   ## ## ##  ##     ## ## ## ## ##    #
+#    #### ## ## ####    ###  ## #   ##  ## #   ###   ##  ###  ## ##    #
+#                                                                      #
+########################################################################
 
 
+To install use:
+
+# layman -a dauleet
+
+To update use:
+
+# layman -s dauleet
+
+Dauleet overlay was created over gentoo linux. 
+
+Alternative you can get through git:
+
+$ git clone git://github.com/yermandu/dauleet.git
