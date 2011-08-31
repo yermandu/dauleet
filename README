@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 README
 
 You can do anything since:
@@ -23,6 +24,29 @@ You can do anything since:
 	distribute to another distubution.
 9 - License must not contaminate other Software.
     The license must not place restrictions on other software that is 
+=======
+Free Redistribution.
+	You can redistribute this software to anyone, be a person or organization.
+Source Code Available.
+	Any program could be manteined through code.
+Derived Works Permitted.
+	If someone want improve this program and redistribute.
+Integrety of the Author's Source Code.
+	The authors of these softwares have the honor of your creation, if you
+	change something so you have to mark clearly to your change dont reflect
+	the author.
+No discrimination Against Person or Groups.
+	It's free of all things.
+No discrimination Against Fields of Endeavor.
+	It can be used to any propose. 
+Distribution of license.
+	The license must work if you give the license to other.
+License must not be Specific to a Product.
+	This mean that if you distribute the software to a distribution, can be
+	distribute to another distubution.
+License must not contaminate other Software.
+	The license must not place restrictions on other software that is 
+>>>>>>> bf742f6985e69cfc6c19b9c3c2590210422adaa2
 	distributed along with the licensed software.
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
@@ -38,6 +62,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 You can see more about this restrictions at:
 http://www.gnu.org/copyleft/gpl.html
+http://www.bsd.org/license.php
 
 ########################################################################
 #                                                                      #
@@ -62,6 +87,6 @@ To update use:
 
 Dauleet overlay was created over gentoo linux. 
 
-Alternative you can get through git:
+Alternative you can get code through git using the command:
 
 $ git clone git://github.com/yermandu/dauleet.git
