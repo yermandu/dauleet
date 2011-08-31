@@ -1,0 +1,18 @@
+          <?xml version="1.0" encoding="UTF-8"?>
+           <!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+           <repositories xmlns="" version="1.0">
+           <repo quality="experimental" status="official">
+               <name>dauleet</name>
+               <description>overlay from yermandu</description>
+               <homepage>https://github.com/yermandu/dauleet</homepage>
+               <owner type="project">
+                   <email>yermandu@gmail.com</email>
+                   <name>Yermandu Daniel</name>
+               </owner>
+               <source type="git">git://github.com/yermandu/dauleet.git</source>
+               <source type="git">https://yermandu@github.com/yermandu/dauleet.git</source>
+               <source type="git">git@github.com:yermandu/dauleet.git</source>
+               <feed>https://github.com/yermandu/dauleet/commits/master.atom</feed>
+           </repo>
+           </repositories>
+
