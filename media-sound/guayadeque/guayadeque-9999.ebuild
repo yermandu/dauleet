@@ -37,7 +37,7 @@ DEPEND="${RDEPEND}
 	dev-util/cmake"
 # Need Fix
 # echo $(cat po/CMakeLists.txt | grep ADD_SUBDIRECTORY | sed 's#ADD_SUBDIRECTORY( \(\w\+\) )#\1#')
-LANGS="es uk it de fr is nb th cs ru hu sv nl"
+LANGS="es uk it de fr is nb th cs ru hu sv nl pt"
 for l in ${LANGS}; do
 	IUSE="$IUSE linguas_${l}"
 done
