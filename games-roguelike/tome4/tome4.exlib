@@ -1,0 +1,111 @@
+# Distributed under the terms of the GNU General Public License v2
+
+export_exlib_phases src_compile src_install
+
+# Some "tome4" releases (e.g., "1.0.0beta20b") use cave-noncompliant version
+# specs, so let exheres override this at runtime.
+myexparam pv="${PV}"
+exparam -v MY_PV pv
+
+MY_PN="t-engine4"
+MY_PNV="${MY_PN}-src-${MY_PV}"
+
+SUMMARY="Single-player tactical role-playing roguelike"
+DESCRIPTION="
+Tales of Maj'Eyal (ToME) is an open-source, single-player, tactical role-
+playing roguelike set in the world of Eyal.
+
+This is the Age of Ascendancy, after over ten thousand years of strife, pain and
+chaos the known world is at last at relative peace. The Spellblaze last effects
+are now tamed, the land slowly heals itself and the civilisations rebuild
+themselves after the Age of Pyre.
+
+It has been one hundred and twenty two years since the Allied Kingdoms have been
+established under the rule of Toknor and his wife Mirvenia. Together they ruled
+the kingdoms with fairness and brought prosperity to both halflings and humans.
+The King died of old age fourteen years ago, and his son, Tolak, is now king.
+
+The elven kingdoms are quiet. The Shaloren elves in their home of Elvala are
+trying to make the world forget about their role in the Spellblaze and are
+living happy lives under the leadership of Aranion Gayaeil. The Thaloren elves
+keep to their ancient tradition of living in the woods, ruled as always by
+Nessilla Tantaelen the wise.
+
+The dwarves of the Iron Throne have started a careful trade relationship with
+the Allied Kingdoms for nearly one hundred years, yet not much is known about
+them, not even their leader.
+
+While the people of Maj'Eyal know that the mages helped put an end to the
+terrors of the Spellblaze, they also did not forget that it was magic that
+started those events. As such mages are still shuned from society, if not
+downright hunted down. Still, this is a golden age, civilizations are healing
+the wounds of thousands of years of conflict, even the humans and the halflings
+have made lasting peace.
+
+You are an adventurer, looking for old powers, treasure and glory. You boldly go
+in lost and forgotten places, untamed forests and sealed ruins. What will you
+find in this age of supposed peace?
+
+Will you meet your destiny, or your own end?"
+
+HOMEPAGE="http://te4.org"
+DOWNLOADS="
+     music? ( ${HOMEPAGE}/dl/t-engine/${MY_PNV}.tar.bz2 )
+    !music? ( ${HOMEPAGE}/dl/t-engine/${MY_PNV}-nomusic.tar.bz2 )"
+UPSTREAM_DOCUMENTATION="${HOMEPAGE}/te4-docs [[ lang = en ]]"
+
+LICENCES="GPL-3"
+SLOT="0"
+MYOPTIONS="music"
+
+# "tome4" is not yet compatible with "libpng:1.4", sadly.
+DEPENDENCIES="
+    build:
+        sys-devel/premake:4
+    build+run:
+        dev-lang/lua
+        media-libs/SDL[>=1.2.0][X]
+        media-libs/SDL_image[>=1.2.0]
+        media-libs/SDL_mixer[>=1.2.0]
+        media-libs/SDL_ttf[>=1.2.0]
+        media-libs/freetype:2
+        media-libs/jpeg
+        media-libs/libpng
+        media-libs/libogg
+        media-libs/libvorbis
+        media-libs/smpeg
+        media-libs/tiff
+        x11-dri/mesa
+"
+#FIXME: Enable the following currently unavailable dependencies:
+#       media-libs/libmikmod
+
+BUGS_TO="leycec@gmail.com"
+WORK="${WORKBASE}/${MY_PNV}"
+
+tome4_src_compile() {
+    edo premake4 gmake
+    emake
+}
+
+tome4_src_install() {
+    # sydbox takes inordinantly long without printing anything. Warn the user.
+    echo ">>> Installing Tales of Maj'Eyal... this may take a moment."
+
+    # Oddly, "premake4" generates no "install" Makefile target. Do it by hand.
+    local tome4_home="/usr/share/tome4"
+    insinto "${tome4_home}"
+    doins -r bootstrap
+    doins -r game
+
+    # Install the main executable.
+    exeinto "${tome4_home}"
+    doexe t-engine
+
+    # The main executable expects to be executed in "${tome4_home}".
+    herebin tome4 <<EOF
+#!/bin/bash
+cd "${tome4_home}"
+./t-engine
+EOF
+}
