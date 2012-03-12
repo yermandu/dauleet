@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=3
-inherit multilib cmake-utils git
+inherit multilib cmake-utils git-2
 
 DESCRIPTION="High performance flash player designed from scratch to be efficient on modern hardware"
 HOMEPAGE="https://launchpad.net/lightspark"
