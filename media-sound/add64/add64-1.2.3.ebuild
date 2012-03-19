@@ -4,6 +4,8 @@
 
 EAPI=3
 
+inherit autotools eutils
+
 DESCRIPTION="Add64 is an additive synthesizer. It is based on QT and uses the
 JACK Audio Connection Kit for platform independent audio/midi I/O."
 HOMEPAGE="http://add64.sourceforge.net"
