@@ -1,0 +1,10 @@
+# ChangeLog for media-sound/add64
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*add64-1.2.3-r1 (18 Mar 2012)
+
+  18 Mar 2012; Yermandu Daniel <yermandu@gentoo.org> add64-1.2.3.ebuild,
+  +add64-1.2.3-r1.ebuild:
+  test
+

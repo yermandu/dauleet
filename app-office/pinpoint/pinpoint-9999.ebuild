@@ -4,8 +4,6 @@
 
 EAPI=4
 
-GNOME_TARBALL_SUFFIX="bz2"
-
 inherit gnome.org git-2 eutils autotools python
 
 DESCRIPTION="A tool for making hackers do excellent presentations"
@@ -16,7 +14,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples +gstreamer +pdf"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/lightspark/lightspark.git"
+SCM=git-2
+EGIT_BOOTSTRAP="./autogen.sh"
+EGIT_REPO_URI="http://git.gnome.org/browse/pinpoint"
 
 # rsvg is used for svg-in-pdf -- clubbing it under pdf for now
 RDEPEND=">=media-libs/clutter-1.4:1.0
@@ -29,14 +29,16 @@ RDEPEND=">=media-libs/clutter-1.4:1.0
 DEPEND="dev-util/pkgconfig
 	${RDEPEND}"
 pkg_setup() {
- 	python_set_active_version 2
- 	python_pkg_setup
+	G2CONF="${G2CONF}"
 }
 
 src_unpack(){
 	git-2_src_unpack
-	unpack ${A}
+#	unpack ${A}
 	cd "${S}"
+}
+src_prepare(){
+	gnome2_src_prepare
 }
 src_configure() {
 	# dax support is disabled because we don't have it in tree yet and it's
