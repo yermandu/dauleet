@@ -37,6 +37,7 @@ src_unpack(){
 #	unpack ${A}
 	cd "${S}"
 }
+
 src_prepare(){
 	gnome2_src_prepare
 }

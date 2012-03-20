@@ -6,7 +6,7 @@ EAPI="3"
 GCONF_DEBUG="no"
 PYTHON_DEPEND="2:2.5"
 
-inherit gnome2 python eutils virtualx multilib
+inherit gnome.org git-2 autotools python eutils virtualx multilib
 
 DESCRIPTION="A non-linear video editor using the GStreamer multimedia framework"
 HOMEPAGE="http://www.pitivi.org"
@@ -53,11 +53,17 @@ DEPEND="${RDEPEND}
 pkg_setup() {
 	DOCS="AUTHORS ChangeLog NEWS RELEASE"
 	python_set_active_version 2
+	G2CONF="{G2CONF}"
+}
+
+src_unpack(){
+	git-2_src_unpack
+#	unpack ${A}
+	cd "${S}"
 }
 
 src_prepare() {
-	#gnome2_src_prepare
-
+	gnome2_src_prepare
 	# disable pyc compiling
 	mv py-compile py-compile.orig
 	ln -s $(type -P true) py-compile
