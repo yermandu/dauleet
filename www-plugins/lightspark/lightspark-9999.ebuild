@@ -41,7 +41,6 @@ RDEPEND="dev-libs/libpcre[cxx]
 		virtual/opengl
         nsplugin? (
                 dev-libs/nspr
-                net-libs/xulrunner
                 x11-libs/gtk+:2
                 x11-libs/gtkglext
         )
